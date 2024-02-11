@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cebac9c1b5d6f9dd375edef0f8bcdbfe {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+                     <title>Mapa das escolas de Inhumas</title>
+                     <style>
+                         /* Estilos para o título */
+                         h1 {
+                             text-align: center; /* Centraliza horizontalmente */
+                             color: #333; /* Cor desejada */
+                             font-size: 24px; /* Tamanho da fonte */
+                         }
+                         h2{
+                            text-align: center; /* Centraliza horizontalmente */
+                             color: #1b03fb; /* Cor desejada */
+                             font-size: 24px; /* Tamanho da fonte */
+                         }
+                       
+                        /* Estilos para o botão */
+                        button {
+                            padding: 10px 20px;
+                            font-size: 16px;
+                            background-color: #19c644;
+                            color: #000000;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+
+                     </style>
+                   
+
+            
+</head>
+<body>
+    
+            <h1>Mapa das Escolas de Inhumas</h1>
+            <h2>Desenvolvido por Raul Cordeiro Tecnologias</h2>
+            <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_TELEFONE" target="_blank">
+                <button type="button">WhatsApp</button>
+            </a>
+            
+            
+            <div class="folium-map" id="map_cebac9c1b5d6f9dd375edef0f8bcdbfe" ></div>
+        
+</body>
+
+<script>
+    
+    
+            var map_cebac9c1b5d6f9dd375edef0f8bcdbfe = L.map(
+                "map_cebac9c1b5d6f9dd375edef0f8bcdbfe",
+                {
+                    center: [-16.3106736215, -49.517396344999995],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+
+            
+
+        
+    
+            var tile_layer_40ee05d96d1d98248387790b9cc8dac3 = L.tileLayer(
+                "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_40ee05d96d1d98248387790b9cc8dac3.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            map_cebac9c1b5d6f9dd375edef0f8bcdbfe.fitBounds(
+                [[-16.437804022, -49.665759820999995], [-16.183543221000004, -49.369032869]],
+                {}
+            );
+        
+    
+        function geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "gray", "fillColor": "gray", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b = L.geoJson(null, {
+                onEachFeature: geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_onEachFeature,
+            
+                style: geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_styler,
+                pointToLayer: geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_pointToLayer,
+                title: "Mapa de Inhumas com Escolas",
+        });
+
+        function geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_add (data) {
+            geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b
+                .addData(data);
+        }
+            geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b_add({"bbox": [-49.665759820999995, -16.437804022, -49.369032869, -16.183543221000004], "features": [{"bbox": [-49.665759820999995, -16.437804022, -49.369032869, -16.183543221000004], "geometry": {"coordinates": [[[[-49.45842463599999, -16.216369090000008], [-49.456861705, -16.22213803], [-49.453144503, -16.225485220000003], [-49.44122632999999, -16.21732731600001], [-49.423027528999995, -16.209357662000006], [-49.41661419, -16.201098045000002], [-49.408110846, -16.198680024], [-49.404641593, -16.194997755999996], [-49.40064472, -16.194263610000007], [-49.394727933999995, -16.189685817999997], [-49.385807292, -16.191600863000005], [-49.383504847999994, -16.198039509000015], [-49.378924442999995, -16.202789476000003], [-49.373090609, -16.205041979000008], [-49.36992081699999, -16.20857778], [-49.369032869, -16.213741062], [-49.372672529, -16.220118410999998], [-49.36961189, -16.223333903000004], [-49.370864821999994, -16.227280311], [-49.36967336199999, -16.236203830000008], [-49.372784949, -16.241967798], [-49.37146936, -16.249343161000002], [-49.372798627, -16.250280465000007], [-49.37256752199999, -16.252262837000007], [-49.37125378799999, -16.25305588299999], [-49.37278689099999, -16.25752721900001], [-49.37146936, -16.258699156000002], [-49.374310247, -16.261600442000002], [-49.372974855, -16.267465875000006], [-49.376029093, -16.269785317999993], [-49.374361886, -16.273318522], [-49.374416155, -16.27822204500001], [-49.379280062999996, -16.283031203999997], [-49.378026849, -16.286664457000004], [-49.37927728099999, -16.291962642000005], [-49.37689504299999, -16.29668060500001], [-49.379614954999994, -16.29962364000001], [-49.378062157, -16.301778729000002], [-49.378447525999995, -16.306210069000006], [-49.381417862999996, -16.308060049], [-49.38114002799999, -16.314706442000006], [-49.38958929, -16.321568267999993], [-49.397387673, -16.333057762000006], [-49.402250685, -16.333695189000004], [-49.409587140000006, -16.340964957999997], [-49.41495144999999, -16.343794849000005], [-49.42134205899999, -16.356361045000003], [-49.43228035599999, -16.365446883], [-49.440028803, -16.376457937000005], [-49.44928435, -16.379101842999994], [-49.454726388, -16.38251767900001], [-49.45511660499999, -16.385147814000014], [-49.45344533, -16.388085918999998], [-49.447950747, -16.388895704000003], [-49.446585003, -16.391614105], [-49.44197251399999, -16.393822536000002], [-49.44056216799999, -16.396721054000007], [-49.437782973999994, -16.397282789], [-49.43608680399999, -16.399344139000007], [-49.432674056, -16.399526181999995], [-49.430173601, -16.403942956000005], [-49.42408904199999, -16.403449564000002], [-49.423392539, -16.405560406000006], [-49.42672187299999, -16.408147072000006], [-49.425643231, -16.412180034], [-49.430808219999996, -16.418446553000006], [-49.446500062000005, -16.428602686], [-49.44753034400001, -16.437804022], [-49.458863522, -16.434564277000007], [-49.463931065999994, -16.426303586000007], [-49.464982907, -16.413497768], [-49.478379391999994, -16.421469069], [-49.47991608699999, -16.425958980000015], [-49.483163154, -16.416663871], [-49.484597400999995, -16.416710680999998], [-49.485792858, -16.414411872000006], [-49.489692032, -16.413767596], [-49.492790801, -16.41405585000001], [-49.496046089, -16.423315051999996], [-49.503187513, -16.42818075700001], [-49.511935716, -16.426461434000014], [-49.544797978, -16.428694658], [-49.555422658999994, -16.40862458600001], [-49.575314073, -16.403686166000004], [-49.581212836999995, -16.400664608000003], [-49.58308925, -16.403994167], [-49.588884129, -16.405263089999995], [-49.598676745999995, -16.40305054000001], [-49.601564561, -16.400991085], [-49.60847541700001, -16.404869856], [-49.611712849, -16.40387598800001], [-49.613723995, -16.405328442000002], [-49.61600626999999, -16.403471275000005], [-49.618146389, -16.403769547], [-49.621479924, -16.400423128000003], [-49.628577420999996, -16.398792393000004], [-49.63121245799999, -16.40054501], [-49.63105941199999, -16.403887232], [-49.633715197, -16.40521842999999], [-49.633940264, -16.407595893], [-49.637225692, -16.409902139999996], [-49.637266241999995, -16.412963526000002], [-49.633889072, -16.416244031000005], [-49.634660716, -16.420778815], [-49.638600046, -16.421294664000005], [-49.639380884, -16.423012286000013], [-49.643933118, -16.420155230000002], [-49.646472643, -16.420921151], [-49.64875616199999, -16.423914261000004], [-49.647593725, -16.426080599000006], [-49.648645357999996, -16.427948860000004], [-49.652577863999994, -16.42564095400001], [-49.654452905, -16.427862332], [-49.659497515, -16.427729416], [-49.657172319999994, -16.422787261999996], [-49.665759820999995, -16.40582652700001], [-49.662896007, -16.398959761000004], [-49.663005073, -16.395688799000002], [-49.659780118, -16.392909940000003], [-49.661730128, -16.390732479000004], [-49.661033706, -16.388780914000005], [-49.662309537999995, -16.385292362], [-49.66017278199999, -16.381749847000002], [-49.658618287, -16.368077906], [-49.653893478, -16.355692985000008], [-49.654973646, -16.344121587999993], [-49.653589696000004, -16.330948135000007], [-49.651810255, -16.329722553000003], [-49.649841818999995, -16.323083468999993], [-49.646837399999995, -16.320624747], [-49.635838463999995, -16.313879080000007], [-49.631501326999995, -16.315683562], [-49.628753794, -16.309135662000003], [-49.628810514, -16.304098739], [-49.622949041, -16.291591255], [-49.625092567, -16.287740430000003], [-49.62445556099999, -16.280775485999992], [-49.64114741099999, -16.24012953000001], [-49.64989307, -16.23131213700001], [-49.654696118, -16.223062794], [-49.652391823, -16.221491367000002], [-49.630897565, -16.23146188900001], [-49.625920875, -16.228898709000006], [-49.62001231199999, -16.231284009], [-49.601201452, -16.226117520000006], [-49.594394195999996, -16.225914494000005], [-49.59028420899999, -16.222268856999996], [-49.58793635599999, -16.216819669], [-49.586001645, -16.218105791000006], [-49.58563255999999, -16.215460688999993], [-49.581488547999996, -16.212292494999996], [-49.581794584, -16.211068002000008], [-49.536165311999994, -16.183543221000004], [-49.45920147, -16.213500730999996], [-49.45842463599999, -16.216369090000008]]]], "type": "MultiPolygon"}, "id": "109", "properties": {"__folium_color": "gray", "abbrev_state": "GO", "code_muni": 5210000.0, "code_region": 5.0, "code_state": 52.0, "name_muni": "Inhumas", "name_region": "Centro Oeste", "name_state": "Goi\u00e1s"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["name_muni"];
+    let aliases = ["name_muni"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+        function geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3};
+            
+            let style = geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4 = L.geoJson(null, {
+                onEachFeature: geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_onEachFeature,
+            
+                style: geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_styler,
+                pointToLayer: geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_pointToLayer,
+                columns: "government_level",
+        });
+
+        function geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_add (data) {
+            geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4
+                .addData(data);
+        }
+            geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4_add({"bbox": [-49.54569, -16.3837724, -49.4762301, -16.26817], "features": [{"bbox": [-49.50346, -16.36089, -49.50346, -16.36089], "geometry": {"coordinates": [-49.50346, -16.36089], "type": "Point"}, "id": "217158", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA JOSE DE ARIMATEIA E SILVA, 402 CENTRO. 75400-000 Inhumas - GO.", "admin_category": "Privada", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022650, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "", "government_level": "Privada", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA FILOSOFAL BALAO MAGICO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35112916", "private_government_partnership": "N\u00e3o", "private_school_type": "Particular", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.49283, -16.37656, -49.49283, -16.37656], "geometry": {"coordinates": [-49.49283, -16.37656], "type": "Point"}, "id": "217159", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AV ANTONIO MOREIRA, SN VILA FLORESTA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022706, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino M\u00e9dio", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CENTRO DE ENSINO EM PERIODO INTEGRAL ARY RIBEIRO VALADAO FILHO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35112237", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4968147, -16.3552402, -49.4968147, -16.3552402], "geometry": {"coordinates": [-49.4968147, -16.3552402], "type": "Point"}, "id": "217160", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "R LEOPOLDO DE BULHOES, SN VILA SANTA MARIA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022714, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado, Atividade Complementar", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CENTRO DE ENSINO EM PERIODO INTEGRAL HORACIO ANTONIO DE PAULA", "name_state": "Goi\u00e1s", "phone_number": "(62) 35141812", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5062439, -16.359324, -49.5062439, -16.359324], "geometry": {"coordinates": [-49.5062439, -16.359324], "type": "Point"}, "id": "217161", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA GOIAS, SN VILA LUCIMAR. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022722, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental, Ensino M\u00e9dio", "education_level_others": "Atendimento Educacional Especializado, Atividade Complementar", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "COLEGIO ESTADUAL DA POLICIA MILITAR DE GOIAS MANOEL VILAVERDE", "name_state": "Goi\u00e1s", "phone_number": "(62) 35143807", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Mais de 1000 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5010887, -16.3627017, -49.5010887, -16.3627017], "geometry": {"coordinates": [-49.5010887, -16.3627017], "type": "Point"}, "id": "217162", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA PEDRO RORIZ, SN 1 ANDAR. CENTRO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022730, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental, Ensino M\u00e9dio", "education_level_others": "", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "COLEGIO ESTADUAL RUI BARBOSA", "name_state": "Goi\u00e1s", "phone_number": "(62) 35112293", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 501 e 1000 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4956661, -16.3587876, -49.4956661, -16.3587876], "geometry": {"coordinates": [-49.4956661, -16.3587876], "type": "Point"}, "id": "217164", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA SIZELIZIO SIMOES DE LIMA, 12 CENTRO. 75400-000 Inhumas - GO.", "admin_category": "Privada", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022773, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "", "government_level": "Privada", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "EDUCANDARIO NOSSA SENHORA DO ROSARIO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35111320", "private_government_partnership": "N\u00e3o", "private_school_type": "Particular", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5032654, -16.3511072, -49.5032654, -16.3511072], "geometry": {"coordinates": [-49.5032654, -16.3511072], "type": "Point"}, "id": "217165", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 21 DE ABRIL, 481 QD APM - LT 01. SETOR PARAISO 1. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022811, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL SOSSEGO DA MAMAE", "name_state": "Goi\u00e1s", "phone_number": "(62) 35146357", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.50089, -16.35306, -49.50089, -16.35306], "geometry": {"coordinates": [-49.50089, -16.35306], "type": "Point"}, "id": "217166", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 31 DE MARCO, SN VILA MARISE. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022838, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA ESTADUAL ANTONIO AUGUSTO DO CARMO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35147940", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.50327, -16.3664, -49.50327, -16.3664], "geometry": {"coordinates": [-49.50327, -16.3664], "type": "Point"}, "id": "217167", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA CEZARIO SILVA, SN VILA AMERICA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022846, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "", "education_level_others": "", "government_level": "Estadual", "index_right": 109, "location_type": "N\u00e3o Informado", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA ESTADUAL ARYANA GUIMARAES", "name_state": "Goi\u00e1s", "phone_number": "(62) 84186452", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "", "service_restriction": "ESCOLA PARALISADA", "size": "", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4844518, -16.3820756, -49.4844518, -16.3820756], "geometry": {"coordinates": [-49.4844518, -16.3820756], "type": "Point"}, "id": "217168", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AV PAU BRASIL, SETOR SALEIRO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022854, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atividade Complementar", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CENTRO DE ENSINO EM PERIODO INTEGRAL BELARMINO ESSADO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35143927", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4954638, -16.3565414, -49.4954638, -16.3565414], "geometry": {"coordinates": [-49.4954638, -16.3565414], "type": "Point"}, "id": "217169", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 1, SN VILA SANTA MARIA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022870, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atividade Complementar", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CENTRO DE ENSINO EM PERIODO INTEGRAL JOAO LOBO FILHO", "name_state": "Goi\u00e1s", "phone_number": "", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.49129, -16.36939, -49.49129, -16.36939], "geometry": {"coordinates": [-49.49129, -16.36939], "type": "Point"}, "id": "217170", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 13, SN VILA STA TEREZINHA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022889, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental, Educa\u00e7\u00e3o de Jovens Adultos", "education_level_others": "", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "COLEGIO ESTADUAL JOAQUIM PEDRO VAZ", "name_state": "Goi\u00e1s", "phone_number": "(62) 35141015", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4852291, -16.3760294, -49.4852291, -16.3760294], "geometry": {"coordinates": [-49.4852291, -16.3760294], "type": "Point"}, "id": "217171", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 02, 150 VILA 31 DE MARCO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022900, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Estadual", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "COLEGIO ESTADUAL PRESIDENTE CASTELO BRANCO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35143763", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5141975, -16.3408913, -49.5141975, -16.3408913], "geometry": {"coordinates": [-49.5141975, -16.3408913], "type": "Point"}, "id": "217173", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA TIRADENTES QUADRA 08 LOTE 01, S/N SETOR PEDRINHAS. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022986, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL PADRE FELICIANO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35140242", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4900993, -16.3724469, -49.4900993, -16.3724469], "geometry": {"coordinates": [-49.4900993, -16.3724469], "type": "Point"}, "id": "217174", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA NAGASAKI, S/N\u00ba Q01 L01. NIPO BRASILEIRO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52022994, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL PERALTA", "name_state": "Goi\u00e1s", "phone_number": "(62) 35147829", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.54569, -16.26817, -49.54569, -16.26817], "geometry": {"coordinates": [-49.54569, -16.26817], "type": "Point"}, "id": "217175", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA QUILOMBO COM RUA 02 QD 06 LT 01, S/N VILA QUILOMBO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023168, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL ODILON RORIZ", "name_state": "Goi\u00e1s", "phone_number": "(62) 30261010", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Rural"}, "type": "Feature"}, {"bbox": [-49.4774441, -16.3759162, -49.4774441, -16.3759162], "geometry": {"coordinates": [-49.4774441, -16.3759162], "type": "Point"}, "id": "217176", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AV RADIAL NORTE ESQ COM AV 01, S/N QD 04 LT01. TEODORO ALVES RESENDE. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023257, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental, Educa\u00e7\u00e3o de Jovens Adultos", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL ALESSANDRO MIGUEL", "name_state": "Goi\u00e1s", "phone_number": "(62) 35142788", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 501 e 1000 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4960013, -16.3767466, -49.4960013, -16.3767466], "geometry": {"coordinates": [-49.4960013, -16.3767466], "type": "Point"}, "id": "217177", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA GUANABARA, S/N QD. 04 LT. 16. VILA OPERARIA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023265, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL CANTINHO DO SABER", "name_state": "Goi\u00e1s", "phone_number": "", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Em Tramita\u00e7\u00e3o", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4949709, -16.3566116, -49.4949709, -16.3566116], "geometry": {"coordinates": [-49.4949709, -16.3566116], "type": "Point"}, "id": "217178", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA PADRES REDENTORISTAS, S/N QUADRA 48 LOTE 13. VILA SANTA MARIA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023273, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL HORAS FELIZES", "name_state": "Goi\u00e1s", "phone_number": "(62) 35147957", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Em Tramita\u00e7\u00e3o", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.489208, -16.3632741, -49.489208, -16.3632741], "geometry": {"coordinates": [-49.489208, -16.3632741], "type": "Point"}, "id": "217179", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA JOSE PEREIRA DA SILVA QD.02 LT.01, S/N ANHANGUERA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023281, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL INFANCIA FELIZ", "name_state": "Goi\u00e1s", "phone_number": "(62) 986209775", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5050127, -16.3665901, -49.5050127, -16.3665901], "geometry": {"coordinates": [-49.5050127, -16.3665901], "type": "Point"}, "id": "217180", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA RENY DAVID, ESQUINA COM PEDRO RORIZ, SN QD H, LTS 11, 12,13. VILA AMERICA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023290, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL MANOEL LUIZ DA SILVA BRANDAO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35142301", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5071055, -16.3548849, -49.5071055, -16.3548849], "geometry": {"coordinates": [-49.5071055, -16.3548849], "type": "Point"}, "id": "217181", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA AVELINO JOAO BERNARDES, QD.03 - LT.APM. RESIDENCIAL ANA BRANDAO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023303, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL MOACIR LUIZ DE PAULA BRANDAO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35142331", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "N\u00e3o", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4922165, -16.380266, -49.4922165, -16.380266], "geometry": {"coordinates": [-49.4922165, -16.380266], "type": "Point"}, "id": "217182", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AV. REGINA PACCIS ESQ. C/ RUA AURELIANO CAETANO MACHADO, QD. 21 LT. 01. PARQUE SANTA MARTA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023311, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil, Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL UNI DUNI TE", "name_state": "Goi\u00e1s", "phone_number": "(62) 35143957", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.51475, -16.3399818, -49.51475, -16.3399818], "geometry": {"coordinates": [-49.51475, -16.3399818], "type": "Point"}, "id": "217183", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 1 ESQUINA COM RUA 2 VILA MUTIRAO, VILA MUTIRAO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023320, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL VILA MUTIRAO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35140267", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4855842, -16.3764147, -49.4855842, -16.3764147], "geometry": {"coordinates": [-49.4855842, -16.3764147], "type": "Point"}, "id": "217184", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 02 ESQUINA COM RUA 07, QD 19, 0 LOTES. 09,10,11 E 12. VILA 31 DE MARCO. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52023338, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL DENTINHO DE LEITE", "name_state": "Goi\u00e1s", "phone_number": "(62) 986362622", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.5046254, -16.366825, -49.5046254, -16.366825], "geometry": {"coordinates": [-49.5046254, -16.366825], "type": "Point"}, "id": "219380", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA RENY DAVID, QD H LT 03. VILA AMERICA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52077756, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CRECHE MUNICIPAL LICONVINA MARIA DE JESUS", "name_state": "Goi\u00e1s", "phone_number": "(62) 35141728", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Em Tramita\u00e7\u00e3o", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4920801, -16.3837724, -49.4920801, -16.3837724], "geometry": {"coordinates": [-49.4920801, -16.3837724], "type": "Point"}, "id": "219381", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 19 DE JUNHO, S/N QD.32 LT. 06 E 07. PARQUE SANTA MARTA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52077764, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CRECHE MUNICIPAL MARIA CAETANO DA SILVA FERREIRA", "name_state": "Goi\u00e1s", "phone_number": "(62) 35143442", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Em Tramita\u00e7\u00e3o", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.49596, -16.35898, -49.49596, -16.35898], "geometry": {"coordinates": [-49.49596, -16.35898], "type": "Point"}, "id": "219959", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA SIZELIZIO SIMOES DE LIMA, 63 CENTRO. 75400-000 Inhumas - GO.", "admin_category": "Privada", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52088308, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino M\u00e9dio", "education_level_others": "", "government_level": "Privada", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "COLEGIO MONSENHOR", "name_state": "Goi\u00e1s", "phone_number": "(62) 35111959", "private_government_partnership": "N\u00e3o", "private_school_type": "Particular", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.49617, -16.35897, -49.49617, -16.35897], "geometry": {"coordinates": [-49.49617, -16.35897], "type": "Point"}, "id": "220121", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA SIZELIZIO SIMOES DE LIMA, 112 CENTRO. 75400-000 Inhumas - GO.", "admin_category": "Privada", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52090728, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "", "government_level": "Privada", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MONSENHOR ANGELINO", "name_state": "Goi\u00e1s", "phone_number": "(62) 35111959", "private_government_partnership": "N\u00e3o", "private_school_type": "Particular", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4812254, -16.3719577, -49.4812254, -16.3719577], "geometry": {"coordinates": [-49.4812254, -16.3719577], "type": "Point"}, "id": "220431", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AVENIDA MARIA JOSE DE PAULA, ESQUINA COM RUA I E RUA E, S/N QD.17. SETOR AMELIO ALVES DOS REIS. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52095266, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino Fundamental", "education_level_others": "Atendimento Educacional Especializado", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "ESCOLA MUNICIPAL PROFESSORA CLEIDE CAMPOS", "name_state": "Goi\u00e1s", "phone_number": "(62) 35112121", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4762301, -16.3746577, -49.4762301, -16.3746577], "geometry": {"coordinates": [-49.4762301, -16.3746577], "type": "Point"}, "id": "220432", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AVENIDA 01 ESQUINA COM RUA 06 E 07 QD 08, LT 01 A, SETOR TEODORO ALVES REZENDE. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52095274, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CRECHE MUNICIPAL MONIELLY CRISTINE", "name_state": "Goi\u00e1s", "phone_number": "(62) 35145935", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.4794372, -16.3723195, -49.4794372, -16.3723195], "geometry": {"coordinates": [-49.4794372, -16.3723195], "type": "Point"}, "id": "220582", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA G QD. 11, SETOR AMELIO ALVES. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52097188, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CMEI HORTENCIA MOREIRA DE PAULA - VO FIA", "name_state": "Goi\u00e1s", "phone_number": "(62) 35141312", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.49915, -16.37184, -49.49915, -16.37184], "geometry": {"coordinates": [-49.49915, -16.37184], "type": "Point"}, "id": "221252", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "AV. UNIVERSITARIA, 0 QD UNICA. VALE DAS GOIABEIRAS. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52105202, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Ensino M\u00e9dio, Educa\u00e7\u00e3o Profissional, Educa\u00e7\u00e3o de Jovens Adultos", "education_level_others": "", "government_level": "Federal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "IFG - CAMPUS INHUMAS", "name_state": "Goi\u00e1s", "phone_number": "(62) 35149501", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 201 e 500 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}, {"bbox": [-49.512796, -16.339329, -49.512796, -16.339329], "geometry": {"coordinates": [-49.512796, -16.339329], "type": "Point"}, "id": "221430", "properties": {"abbrev_state_left": "GO", "abbrev_state_right": "GO", "address": "RUA 07 ESQUINA COM A RUA 03 E 02, SETOR BELA VISTA. 75400-000 Inhumas - GO.", "admin_category": "P\u00fablica", "code_muni": 5210000.0, "code_region": 5.0, "code_school": 52210375, "code_state": 52.0, "date_update": "2020-10-18", "education_level": "Educa\u00e7\u00e3o Infantil", "education_level_others": "", "government_level": "Municipal", "index_right": 109, "location_type": "A escola n\u00e3o est\u00e1 em \u00e1rea de localiza\u00e7\u00e3o diferenciada", "name_muni_left": "Inhumas", "name_muni_right": "Inhumas", "name_region": "Centro Oeste", "name_school": "CRECHE MUNICIPAL VO JOVITA", "name_state": "Goi\u00e1s", "phone_number": "(62) 35140221", "private_government_partnership": "N\u00e3o", "private_school_type": "N\u00e3o Informado", "regulated_education_council": "Sim", "service_restriction": "ESCOLA EM FUNCIONAMENTO E SEM RESTRI\u00c7\u00c3O DE ATENDIMENTO", "size": "Entre 51 e 200 matr\u00edculas de escolariza\u00e7\u00e3o", "urban": "Urbana"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["abbrev_state_left", "name_muni_left", "code_school", "name_school", "education_level", "education_level_others", "admin_category", "address", "phone_number", "government_level", "private_school_type", "private_government_partnership", "regulated_education_council", "service_restriction", "size", "urban", "location_type", "date_update", "index_right", "code_muni", "name_muni_right", "code_state", "abbrev_state_right", "name_state", "code_region", "name_region"];
+    let aliases = ["abbrev_state_left", "name_muni_left", "code_school", "name_school", "education_level", "education_level_others", "admin_category", "address", "phone_number", "government_level", "private_school_type", "private_government_partnership", "regulated_education_council", "service_restriction", "size", "urban", "location_type", "date_update", "index_right", "code_muni", "name_muni_right", "code_state", "abbrev_state_right", "name_state", "code_region", "name_region"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+    geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["name_school", "government_level", "phone_number", "address"];
+    let aliases = ["name_school", "government_level", "phone_number", "address"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumpopup"});
+                     
+    
+            geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            tile_layer_40ee05d96d1d98248387790b9cc8dac3.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            tile_layer_40ee05d96d1d98248387790b9cc8dac3.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            tile_layer_40ee05d96d1d98248387790b9cc8dac3.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            geo_json_e5a3fffa25bce1edd5f69fa93ea1ee1b.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+    
+            geo_json_9d83e911ed21ce06b7da6dbb1a3b88c4.addTo(map_cebac9c1b5d6f9dd375edef0f8bcdbfe);
+        
+</script>
+</html>
